@@ -1,0 +1,4 @@
+ocr/bin/* filter=lfs diff=lfs merge=lfs -text
+3rdparty/opencv_4.3.0/* filter=lfs diff=lfs merge=lfs -text
+3rdparty/opencv_3.4/* filter=lfs diff=lfs merge=lfs -text
+3rdparty/ncnn/* filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,254 @@
+7767517
+252 286
+Input                    input                    0 1 input
+Convolution              Conv_0                   1 1 input onnx::Add_693 0=8 1=3 3=2 4=1 5=1 6=216
+Split                    splitncnn_0              1 2 onnx::Add_693 onnx::Add_693_splitncnn_0 onnx::Add_693_splitncnn_1
+BinaryOp                 Add_2                    1 1 onnx::Add_693_splitncnn_1 onnx::Relu_252 1=1 2=3.000000e+00
+ReLU                     Relu_3                   1 1 onnx::Relu_252 onnx::Clip_253
+Clip                     Clip_4                   1 1 onnx::Clip_253 onnx::Mul_258 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_5                    2 1 onnx::Add_693_splitncnn_0 onnx::Mul_258 onnx::Div_259 0=2
+BinaryOp                 Div_7                    1 1 onnx::Div_259 input.4 0=3 1=1 2=6.000000e+00
+Convolution              Conv_8                   1 1 input.4 onnx::Conv_264 0=8 1=1 5=1 6=64 9=1
+ConvolutionDepthWise     Conv_10                  1 1 onnx::Conv_264 onnx::GlobalAveragePool_267 0=8 1=3 13=2 4=1 5=1 6=72 7=8 9=1
+Split                    splitncnn_1              1 2 onnx::GlobalAveragePool_267 onnx::GlobalAveragePool_267_splitncnn_0 onnx::GlobalAveragePool_267_splitncnn_1
+Pooling                  GlobalAveragePool_12     1 1 onnx::GlobalAveragePool_267_splitncnn_1 input.24 0=1 4=1
+InnerProduct             Conv_13                  1 1 input.24 onnx::Conv_270 0=2 1=1 2=16 9=1
+InnerProduct             Conv_15                  1 1 onnx::Conv_270 onnx::Mul_271 0=8 1=1 2=16
+BinaryOp                 Mul_17                   1 1 onnx::Mul_271 onnx::Add_273 0=2 1=1 2=1.200000e+00
+BinaryOp                 Add_19                   1 1 onnx::Add_273 onnx::Relu_275 1=1 2=3.000000e+00
+ReLU                     Relu_20                  1 1 onnx::Relu_275 onnx::Clip_276
+Clip                     Clip_21                  1 1 onnx::Clip_276 onnx::Div_281 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Div_23                   1 1 onnx::Div_281 onnx::Mul_283 0=3 1=1 2=6.000000e+00
+BinaryOp                 Mul_24                   2 1 onnx::GlobalAveragePool_267_splitncnn_0 onnx::Mul_283 input.32 0=2
+Convolution              Conv_25                  1 1 input.32 input.40 0=8 1=1 5=1 6=64
+Convolution              Conv_26                  1 1 input.40 onnx::Conv_289 0=24 1=1 5=1 6=192 9=1
+ConvolutionDepthWise     Conv_28                  1 1 onnx::Conv_289 onnx::Conv_292 0=24 1=3 13=2 4=1 5=1 6=216 7=24 9=1
+Convolution              Conv_30                  1 1 onnx::Conv_292 input.64 0=8 1=1 5=1 6=192
+Split                    splitncnn_2              1 2 input.64 input.64_splitncnn_0 input.64_splitncnn_1
+Convolution              Conv_31                  1 1 input.64_splitncnn_1 onnx::Conv_297 0=32 1=1 5=1 6=256 9=1
+ConvolutionDepthWise     Conv_33                  1 1 onnx::Conv_297 onnx::Conv_300 0=32 1=3 4=1 5=1 6=288 7=32 9=1
+Convolution              Conv_35                  1 1 onnx::Conv_300 onnx::Add_720 0=8 1=1 5=1 6=256
+BinaryOp                 Add_36                   2 1 input.64_splitncnn_0 onnx::Add_720 input.88
+Convolution              Conv_37                  1 1 input.88 onnx::Add_723 0=32 1=1 5=1 6=256
+Split                    splitncnn_3              1 2 onnx::Add_723 onnx::Add_723_splitncnn_0 onnx::Add_723_splitncnn_1
+BinaryOp                 Add_39                   1 1 onnx::Add_723_splitncnn_1 onnx::Relu_307 1=1 2=3.000000e+00
+ReLU                     Relu_40                  1 1 onnx::Relu_307 onnx::Clip_308
+Clip                     Clip_41                  1 1 onnx::Clip_308 onnx::Mul_313 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_42                   2 1 onnx::Add_723_splitncnn_0 onnx::Mul_313 onnx::Div_314 0=2
+BinaryOp                 Div_44                   1 1 onnx::Div_314 input.96 0=3 1=1 2=6.000000e+00
+ConvolutionDepthWise     Conv_45                  1 1 input.96 onnx::Add_726 0=32 1=5 13=2 4=2 5=1 6=800 7=32
+Split                    splitncnn_4              1 2 onnx::Add_726 onnx::Add_726_splitncnn_0 onnx::Add_726_splitncnn_1
+BinaryOp                 Add_47                   1 1 onnx::Add_726_splitncnn_1 onnx::Relu_320 1=1 2=3.000000e+00
+ReLU                     Relu_48                  1 1 onnx::Relu_320 onnx::Clip_321
+Clip                     Clip_49                  1 1 onnx::Clip_321 onnx::Mul_326 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_50                   2 1 onnx::Add_726_splitncnn_0 onnx::Mul_326 onnx::Div_327 0=2
+BinaryOp                 Div_52                   1 1 onnx::Div_327 input.104 0=3 1=1 2=6.000000e+00
+Split                    splitncnn_5              1 2 input.104 input.104_splitncnn_0 input.104_splitncnn_1
+Pooling                  GlobalAveragePool_53     1 1 input.104_splitncnn_1 input.108 0=1 4=1
+InnerProduct             Conv_54                  1 1 input.108 onnx::Conv_332 0=8 1=1 2=256 9=1
+InnerProduct             Conv_56                  1 1 onnx::Conv_332 onnx::Mul_333 0=32 1=1 2=256
+BinaryOp                 Mul_58                   1 1 onnx::Mul_333 onnx::Add_335 0=2 1=1 2=1.200000e+00
+BinaryOp                 Add_60                   1 1 onnx::Add_335 onnx::Relu_337 1=1 2=3.000000e+00
+ReLU                     Relu_61                  1 1 onnx::Relu_337 onnx::Clip_338
+Clip                     Clip_62                  1 1 onnx::Clip_338 onnx::Div_343 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Div_64                   1 1 onnx::Div_343 onnx::Mul_345 0=3 1=1 2=6.000000e+00
+BinaryOp                 Mul_65                   2 1 input.104_splitncnn_0 onnx::Mul_345 input.116 0=2
+Convolution              Conv_66                  1 1 input.116 input.124 0=16 1=1 5=1 6=512
+Split                    splitncnn_6              1 2 input.124 input.124_splitncnn_0 input.124_splitncnn_1
+Convolution              Conv_67                  1 1 input.124_splitncnn_1 onnx::Add_732 0=88 1=1 5=1 6=1408
+Split                    splitncnn_7              1 2 onnx::Add_732 onnx::Add_732_splitncnn_0 onnx::Add_732_splitncnn_1
+BinaryOp                 Add_69                   1 1 onnx::Add_732_splitncnn_1 onnx::Relu_352 1=1 2=3.000000e+00
+ReLU                     Relu_70                  1 1 onnx::Relu_352 onnx::Clip_353
+Clip                     Clip_71                  1 1 onnx::Clip_353 onnx::Mul_358 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_72                   2 1 onnx::Add_732_splitncnn_0 onnx::Mul_358 onnx::Div_359 0=2
+BinaryOp                 Div_74                   1 1 onnx::Div_359 input.132 0=3 1=1 2=6.000000e+00
+ConvolutionDepthWise     Conv_75                  1 1 input.132 onnx::Add_735 0=88 1=5 4=2 5=1 6=2200 7=88
+Split                    splitncnn_8              1 2 onnx::Add_735 onnx::Add_735_splitncnn_0 onnx::Add_735_splitncnn_1
+BinaryOp                 Add_77                   1 1 onnx::Add_735_splitncnn_1 onnx::Relu_365 1=1 2=3.000000e+00
+ReLU                     Relu_78                  1 1 onnx::Relu_365 onnx::Clip_366
+Clip                     Clip_79                  1 1 onnx::Clip_366 onnx::Mul_371 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_80                   2 1 onnx::Add_735_splitncnn_0 onnx::Mul_371 onnx::Div_372 0=2
+BinaryOp                 Div_82                   1 1 onnx::Div_372 input.140 0=3 1=1 2=6.000000e+00
+Split                    splitncnn_9              1 2 input.140 input.140_splitncnn_0 input.140_splitncnn_1
+Pooling                  GlobalAveragePool_83     1 1 input.140_splitncnn_1 input.144 0=1 4=1
+InnerProduct             Conv_84                  1 1 input.144 onnx::Conv_377 0=22 1=1 2=1936 9=1
+InnerProduct             Conv_86                  1 1 onnx::Conv_377 onnx::Mul_378 0=88 1=1 2=1936
+BinaryOp                 Mul_88                   1 1 onnx::Mul_378 onnx::Add_380 0=2 1=1 2=1.200000e+00
+BinaryOp                 Add_90                   1 1 onnx::Add_380 onnx::Relu_382 1=1 2=3.000000e+00
+ReLU                     Relu_91                  1 1 onnx::Relu_382 onnx::Clip_383
+Clip                     Clip_92                  1 1 onnx::Clip_383 onnx::Div_388 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Div_94                   1 1 onnx::Div_388 onnx::Mul_390 0=3 1=1 2=6.000000e+00
+BinaryOp                 Mul_95                   2 1 input.140_splitncnn_0 onnx::Mul_390 input.152 0=2
+Convolution              Conv_96                  1 1 input.152 onnx::Add_738 0=16 1=1 5=1 6=1408
+BinaryOp                 Add_97                   2 1 input.124_splitncnn_0 onnx::Add_738 input.160
+Split                    splitncnn_10             1 2 input.160 input.160_splitncnn_0 input.160_splitncnn_1
+Convolution              Conv_98                  1 1 input.160_splitncnn_1 onnx::Add_741 0=88 1=1 5=1 6=1408
+Split                    splitncnn_11             1 2 onnx::Add_741 onnx::Add_741_splitncnn_0 onnx::Add_741_splitncnn_1
+BinaryOp                 Add_100                  1 1 onnx::Add_741_splitncnn_1 onnx::Relu_398 1=1 2=3.000000e+00
+ReLU                     Relu_101                 1 1 onnx::Relu_398 onnx::Clip_399
+Clip                     Clip_102                 1 1 onnx::Clip_399 onnx::Mul_404 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_103                  2 1 onnx::Add_741_splitncnn_0 onnx::Mul_404 onnx::Div_405 0=2
+BinaryOp                 Div_105                  1 1 onnx::Div_405 input.168 0=3 1=1 2=6.000000e+00
+ConvolutionDepthWise     Conv_106                 1 1 input.168 onnx::Add_744 0=88 1=5 4=2 5=1 6=2200 7=88
+Split                    splitncnn_12             1 2 onnx::Add_744 onnx::Add_744_splitncnn_0 onnx::Add_744_splitncnn_1
+BinaryOp                 Add_108                  1 1 onnx::Add_744_splitncnn_1 onnx::Relu_411 1=1 2=3.000000e+00
+ReLU                     Relu_109                 1 1 onnx::Relu_411 onnx::Clip_412
+Clip                     Clip_110                 1 1 onnx::Clip_412 onnx::Mul_417 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_111                  2 1 onnx::Add_744_splitncnn_0 onnx::Mul_417 onnx::Div_418 0=2
+BinaryOp                 Div_113                  1 1 onnx::Div_418 input.176 0=3 1=1 2=6.000000e+00
+Split                    splitncnn_13             1 2 input.176 input.176_splitncnn_0 input.176_splitncnn_1
+Pooling                  GlobalAveragePool_114    1 1 input.176_splitncnn_1 input.180 0=1 4=1
+InnerProduct             Conv_115                 1 1 input.180 onnx::Conv_423 0=22 1=1 2=1936 9=1
+InnerProduct             Conv_117                 1 1 onnx::Conv_423 onnx::Mul_424 0=88 1=1 2=1936
+BinaryOp                 Mul_119                  1 1 onnx::Mul_424 onnx::Add_426 0=2 1=1 2=1.200000e+00
+BinaryOp                 Add_121                  1 1 onnx::Add_426 onnx::Relu_428 1=1 2=3.000000e+00
+ReLU                     Relu_122                 1 1 onnx::Relu_428 onnx::Clip_429
+Clip                     Clip_123                 1 1 onnx::Clip_429 onnx::Div_434 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Div_125                  1 1 onnx::Div_434 onnx::Mul_436 0=3 1=1 2=6.000000e+00
+BinaryOp                 Mul_126                  2 1 input.176_splitncnn_0 onnx::Mul_436 input.188 0=2
+Convolution              Conv_127                 1 1 input.188 onnx::Add_747 0=16 1=1 5=1 6=1408
+BinaryOp                 Add_128                  2 1 input.160_splitncnn_0 onnx::Add_747 input.196
+Split                    splitncnn_14             1 2 input.196 input.196_splitncnn_0 input.196_splitncnn_1
+Convolution              Conv_129                 1 1 input.196_splitncnn_1 onnx::Add_750 0=40 1=1 5=1 6=640
+Split                    splitncnn_15             1 2 onnx::Add_750 onnx::Add_750_splitncnn_0 onnx::Add_750_splitncnn_1
+BinaryOp                 Add_131                  1 1 onnx::Add_750_splitncnn_1 onnx::Relu_444 1=1 2=3.000000e+00
+ReLU                     Relu_132                 1 1 onnx::Relu_444 onnx::Clip_445
+Clip                     Clip_133                 1 1 onnx::Clip_445 onnx::Mul_450 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_134                  2 1 onnx::Add_750_splitncnn_0 onnx::Mul_450 onnx::Div_451 0=2
+BinaryOp                 Div_136                  1 1 onnx::Div_451 input.204 0=3 1=1 2=6.000000e+00
+ConvolutionDepthWise     Conv_137                 1 1 input.204 onnx::Add_753 0=40 1=5 4=2 5=1 6=1000 7=40
+Split                    splitncnn_16             1 2 onnx::Add_753 onnx::Add_753_splitncnn_0 onnx::Add_753_splitncnn_1
+BinaryOp                 Add_139                  1 1 onnx::Add_753_splitncnn_1 onnx::Relu_457 1=1 2=3.000000e+00
+ReLU                     Relu_140                 1 1 onnx::Relu_457 onnx::Clip_458
+Clip                     Clip_141                 1 1 onnx::Clip_458 onnx::Mul_463 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_142                  2 1 onnx::Add_753_splitncnn_0 onnx::Mul_463 onnx::Div_464 0=2
+BinaryOp                 Div_144                  1 1 onnx::Div_464 input.212 0=3 1=1 2=6.000000e+00
+Split                    splitncnn_17             1 2 input.212 input.212_splitncnn_0 input.212_splitncnn_1
+Pooling                  GlobalAveragePool_145    1 1 input.212_splitncnn_1 input.216 0=1 4=1
+InnerProduct             Conv_146                 1 1 input.216 onnx::Conv_469 0=10 1=1 2=400 9=1
+InnerProduct             Conv_148                 1 1 onnx::Conv_469 onnx::Mul_470 0=40 1=1 2=400
+BinaryOp                 Mul_150                  1 1 onnx::Mul_470 onnx::Add_472 0=2 1=1 2=1.200000e+00
+BinaryOp                 Add_152                  1 1 onnx::Add_472 onnx::Relu_474 1=1 2=3.000000e+00
+ReLU                     Relu_153                 1 1 onnx::Relu_474 onnx::Clip_475
+Clip                     Clip_154                 1 1 onnx::Clip_475 onnx::Div_480 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Div_156                  1 1 onnx::Div_480 onnx::Mul_482 0=3 1=1 2=6.000000e+00
+BinaryOp                 Mul_157                  2 1 input.212_splitncnn_0 onnx::Mul_482 input.224 0=2
+Convolution              Conv_158                 1 1 input.224 onnx::Add_756 0=16 1=1 5=1 6=640
+BinaryOp                 Add_159                  2 1 input.196_splitncnn_0 onnx::Add_756 input.232
+Split                    splitncnn_18             1 2 input.232 input.232_splitncnn_0 input.232_splitncnn_1
+Convolution              Conv_160                 1 1 input.232_splitncnn_1 onnx::Add_759 0=48 1=1 5=1 6=768
+Split                    splitncnn_19             1 2 onnx::Add_759 onnx::Add_759_splitncnn_0 onnx::Add_759_splitncnn_1
+BinaryOp                 Add_162                  1 1 onnx::Add_759_splitncnn_1 onnx::Relu_490 1=1 2=3.000000e+00
+ReLU                     Relu_163                 1 1 onnx::Relu_490 onnx::Clip_491
+Clip                     Clip_164                 1 1 onnx::Clip_491 onnx::Mul_496 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_165                  2 1 onnx::Add_759_splitncnn_0 onnx::Mul_496 onnx::Div_497 0=2
+BinaryOp                 Div_167                  1 1 onnx::Div_497 input.240 0=3 1=1 2=6.000000e+00
+ConvolutionDepthWise     Conv_168                 1 1 input.240 onnx::Add_762 0=48 1=5 4=2 5=1 6=1200 7=48
+Split                    splitncnn_20             1 2 onnx::Add_762 onnx::Add_762_splitncnn_0 onnx::Add_762_splitncnn_1
+BinaryOp                 Add_170                  1 1 onnx::Add_762_splitncnn_1 onnx::Relu_503 1=1 2=3.000000e+00
+ReLU                     Relu_171                 1 1 onnx::Relu_503 onnx::Clip_504
+Clip                     Clip_172                 1 1 onnx::Clip_504 onnx::Mul_509 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_173                  2 1 onnx::Add_762_splitncnn_0 onnx::Mul_509 onnx::Div_510 0=2
+BinaryOp                 Div_175                  1 1 onnx::Div_510 input.248 0=3 1=1 2=6.000000e+00
+Split                    splitncnn_21             1 2 input.248 input.248_splitncnn_0 input.248_splitncnn_1
+Pooling                  GlobalAveragePool_176    1 1 input.248_splitncnn_1 input.252 0=1 4=1
+InnerProduct             Conv_177                 1 1 input.252 onnx::Conv_515 0=12 1=1 2=576 9=1
+InnerProduct             Conv_179                 1 1 onnx::Conv_515 onnx::Mul_516 0=48 1=1 2=576
+BinaryOp                 Mul_181                  1 1 onnx::Mul_516 onnx::Add_518 0=2 1=1 2=1.200000e+00
+BinaryOp                 Add_183                  1 1 onnx::Add_518 onnx::Relu_520 1=1 2=3.000000e+00
+ReLU                     Relu_184                 1 1 onnx::Relu_520 onnx::Clip_521
+Clip                     Clip_185                 1 1 onnx::Clip_521 onnx::Div_526 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Div_187                  1 1 onnx::Div_526 onnx::Mul_528 0=3 1=1 2=6.000000e+00
+BinaryOp                 Mul_188                  2 1 input.248_splitncnn_0 onnx::Mul_528 input.260 0=2
+Convolution              Conv_189                 1 1 input.260 onnx::Add_765 0=16 1=1 5=1 6=768
+BinaryOp                 Add_190                  2 1 input.232_splitncnn_0 onnx::Add_765 input.268
+Convolution              Conv_191                 1 1 input.268 onnx::Add_768 0=104 1=1 5=1 6=1664
+Split                    splitncnn_22             1 2 onnx::Add_768 onnx::Add_768_splitncnn_0 onnx::Add_768_splitncnn_1
+BinaryOp                 Add_193                  1 1 onnx::Add_768_splitncnn_1 onnx::Relu_536 1=1 2=3.000000e+00
+ReLU                     Relu_194                 1 1 onnx::Relu_536 onnx::Clip_537
+Clip                     Clip_195                 1 1 onnx::Clip_537 onnx::Mul_542 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_196                  2 1 onnx::Add_768_splitncnn_0 onnx::Mul_542 onnx::Div_543 0=2
+BinaryOp                 Div_198                  1 1 onnx::Div_543 input.276 0=3 1=1 2=6.000000e+00
+ConvolutionDepthWise     Conv_199                 1 1 input.276 onnx::Add_771 0=104 1=5 13=2 4=2 5=1 6=2600 7=104
+Split                    splitncnn_23             1 2 onnx::Add_771 onnx::Add_771_splitncnn_0 onnx::Add_771_splitncnn_1
+BinaryOp                 Add_201                  1 1 onnx::Add_771_splitncnn_1 onnx::Relu_549 1=1 2=3.000000e+00
+ReLU                     Relu_202                 1 1 onnx::Relu_549 onnx::Clip_550
+Clip                     Clip_203                 1 1 onnx::Clip_550 onnx::Mul_555 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_204                  2 1 onnx::Add_771_splitncnn_0 onnx::Mul_555 onnx::Div_556 0=2
+BinaryOp                 Div_206                  1 1 onnx::Div_556 input.284 0=3 1=1 2=6.000000e+00
+Split                    splitncnn_24             1 2 input.284 input.284_splitncnn_0 input.284_splitncnn_1
+Pooling                  GlobalAveragePool_207    1 1 input.284_splitncnn_1 input.288 0=1 4=1
+InnerProduct             Conv_208                 1 1 input.288 onnx::Conv_561 0=26 1=1 2=2704 9=1
+InnerProduct             Conv_210                 1 1 onnx::Conv_561 onnx::Mul_562 0=104 1=1 2=2704
+BinaryOp                 Mul_212                  1 1 onnx::Mul_562 onnx::Add_564 0=2 1=1 2=1.200000e+00
+BinaryOp                 Add_214                  1 1 onnx::Add_564 onnx::Relu_566 1=1 2=3.000000e+00
+ReLU                     Relu_215                 1 1 onnx::Relu_566 onnx::Clip_567
+Clip                     Clip_216                 1 1 onnx::Clip_567 onnx::Div_572 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Div_218                  1 1 onnx::Div_572 onnx::Mul_574 0=3 1=1 2=6.000000e+00
+BinaryOp                 Mul_219                  2 1 input.284_splitncnn_0 onnx::Mul_574 input.296 0=2
+Convolution              Conv_220                 1 1 input.296 input.304 0=32 1=1 5=1 6=3328
+Split                    splitncnn_25             1 2 input.304 input.304_splitncnn_0 input.304_splitncnn_1
+Convolution              Conv_221                 1 1 input.304_splitncnn_1 onnx::Add_777 0=200 1=1 5=1 6=6400
+Split                    splitncnn_26             1 2 onnx::Add_777 onnx::Add_777_splitncnn_0 onnx::Add_777_splitncnn_1
+BinaryOp                 Add_223                  1 1 onnx::Add_777_splitncnn_1 onnx::Relu_581 1=1 2=3.000000e+00
+ReLU                     Relu_224                 1 1 onnx::Relu_581 onnx::Clip_582
+Clip                     Clip_225                 1 1 onnx::Clip_582 onnx::Mul_587 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_226                  2 1 onnx::Add_777_splitncnn_0 onnx::Mul_587 onnx::Div_588 0=2
+BinaryOp                 Div_228                  1 1 onnx::Div_588 input.312 0=3 1=1 2=6.000000e+00
+ConvolutionDepthWise     Conv_229                 1 1 input.312 onnx::Add_780 0=200 1=5 4=2 5=1 6=5000 7=200
+Split                    splitncnn_27             1 2 onnx::Add_780 onnx::Add_780_splitncnn_0 onnx::Add_780_splitncnn_1
+BinaryOp                 Add_231                  1 1 onnx::Add_780_splitncnn_1 onnx::Relu_594 1=1 2=3.000000e+00
+ReLU                     Relu_232                 1 1 onnx::Relu_594 onnx::Clip_595
+Clip                     Clip_233                 1 1 onnx::Clip_595 onnx::Mul_600 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_234                  2 1 onnx::Add_780_splitncnn_0 onnx::Mul_600 onnx::Div_601 0=2
+BinaryOp                 Div_236                  1 1 onnx::Div_601 input.320 0=3 1=1 2=6.000000e+00
+Split                    splitncnn_28             1 2 input.320 input.320_splitncnn_0 input.320_splitncnn_1
+Pooling                  GlobalAveragePool_237    1 1 input.320_splitncnn_1 input.324 0=1 4=1
+InnerProduct             Conv_238                 1 1 input.324 onnx::Conv_606 0=50 1=1 2=10000 9=1
+InnerProduct             Conv_240                 1 1 onnx::Conv_606 onnx::Mul_607 0=200 1=1 2=10000
+BinaryOp                 Mul_242                  1 1 onnx::Mul_607 onnx::Add_609 0=2 1=1 2=1.200000e+00
+BinaryOp                 Add_244                  1 1 onnx::Add_609 onnx::Relu_611 1=1 2=3.000000e+00
+ReLU                     Relu_245                 1 1 onnx::Relu_611 onnx::Clip_612
+Clip                     Clip_246                 1 1 onnx::Clip_612 onnx::Div_617 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Div_248                  1 1 onnx::Div_617 onnx::Mul_619 0=3 1=1 2=6.000000e+00
+BinaryOp                 Mul_249                  2 1 input.320_splitncnn_0 onnx::Mul_619 input.332 0=2
+Convolution              Conv_250                 1 1 input.332 onnx::Add_783 0=32 1=1 5=1 6=6400
+BinaryOp                 Add_251                  2 1 input.304_splitncnn_0 onnx::Add_783 input.340
+Split                    splitncnn_29             1 2 input.340 input.340_splitncnn_0 input.340_splitncnn_1
+Convolution              Conv_252                 1 1 input.340_splitncnn_1 onnx::Add_786 0=200 1=1 5=1 6=6400
+Split                    splitncnn_30             1 2 onnx::Add_786 onnx::Add_786_splitncnn_0 onnx::Add_786_splitncnn_1
+BinaryOp                 Add_254                  1 1 onnx::Add_786_splitncnn_1 onnx::Relu_627 1=1 2=3.000000e+00
+ReLU                     Relu_255                 1 1 onnx::Relu_627 onnx::Clip_628
+Clip                     Clip_256                 1 1 onnx::Clip_628 onnx::Mul_633 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_257                  2 1 onnx::Add_786_splitncnn_0 onnx::Mul_633 onnx::Div_634 0=2
+BinaryOp                 Div_259                  1 1 onnx::Div_634 input.348 0=3 1=1 2=6.000000e+00
+ConvolutionDepthWise     Conv_260                 1 1 input.348 onnx::Add_789 0=200 1=5 4=2 5=1 6=5000 7=200
+Split                    splitncnn_31             1 2 onnx::Add_789 onnx::Add_789_splitncnn_0 onnx::Add_789_splitncnn_1
+BinaryOp                 Add_262                  1 1 onnx::Add_789_splitncnn_1 onnx::Relu_640 1=1 2=3.000000e+00
+ReLU                     Relu_263                 1 1 onnx::Relu_640 onnx::Clip_641
+Clip                     Clip_264                 1 1 onnx::Clip_641 onnx::Mul_646 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_265                  2 1 onnx::Add_789_splitncnn_0 onnx::Mul_646 onnx::Div_647 0=2
+BinaryOp                 Div_267                  1 1 onnx::Div_647 input.356 0=3 1=1 2=6.000000e+00
+Split                    splitncnn_32             1 2 input.356 input.356_splitncnn_0 input.356_splitncnn_1
+Pooling                  GlobalAveragePool_268    1 1 input.356_splitncnn_1 input.360 0=1 4=1
+InnerProduct             Conv_269                 1 1 input.360 onnx::Conv_652 0=50 1=1 2=10000 9=1
+InnerProduct             Conv_271                 1 1 onnx::Conv_652 onnx::Mul_653 0=200 1=1 2=10000
+BinaryOp                 Mul_273                  1 1 onnx::Mul_653 onnx::Add_655 0=2 1=1 2=1.200000e+00
+BinaryOp                 Add_275                  1 1 onnx::Add_655 onnx::Relu_657 1=1 2=3.000000e+00
+ReLU                     Relu_276                 1 1 onnx::Relu_657 onnx::Clip_658
+Clip                     Clip_277                 1 1 onnx::Clip_658 onnx::Div_663 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Div_279                  1 1 onnx::Div_663 onnx::Mul_665 0=3 1=1 2=6.000000e+00
+BinaryOp                 Mul_280                  2 1 input.356_splitncnn_0 onnx::Mul_665 input.368 0=2
+Convolution              Conv_281                 1 1 input.368 onnx::Add_792 0=32 1=1 5=1 6=6400
+BinaryOp                 Add_282                  2 1 input.340_splitncnn_0 onnx::Add_792 input.376
+Convolution              Conv_283                 1 1 input.376 onnx::Add_795 0=200 1=1 5=1 6=6400
+Split                    splitncnn_33             1 2 onnx::Add_795 onnx::Add_795_splitncnn_0 onnx::Add_795_splitncnn_1
+BinaryOp                 Add_285                  1 1 onnx::Add_795_splitncnn_1 onnx::Relu_673 1=1 2=3.000000e+00
+ReLU                     Relu_286                 1 1 onnx::Relu_673 onnx::Clip_674
+Clip                     Clip_287                 1 1 onnx::Clip_674 onnx::Mul_679 0=0.000000e+00 1=6.000000e+00
+BinaryOp                 Mul_288                  2 1 onnx::Add_795_splitncnn_0 onnx::Mul_679 onnx::Div_680 0=2
+BinaryOp                 Div_290                  1 1 onnx::Div_680 onnx::MaxPool_682 0=3 1=1 2=6.000000e+00
+Pooling                  MaxPool_291              1 1 onnx::MaxPool_682 input.384 1=2 2=2 5=1
+Pooling                  GlobalAveragePool_292    1 1 input.384 onnx::Gemm_690 0=1 4=1
+InnerProduct             Gemm_294                 1 1 onnx::Gemm_690 x 0=2 1=1 2=400
+Softmax                  Softmax_295              1 1 x output
