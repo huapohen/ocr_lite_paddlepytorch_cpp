@@ -1,0 +1,4 @@
+/home/qwe/code/ocr/build/CMakeFiles/ocrlib.dir
+/home/qwe/code/ocr/build/CMakeFiles/ocr.dir
+/home/qwe/code/ocr/build/CMakeFiles/edit_cache.dir
+/home/qwe/code/ocr/build/CMakeFiles/rebuild_cache.dir
