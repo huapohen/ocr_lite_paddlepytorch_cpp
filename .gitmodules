@@ -1,9 +1,9 @@
-[submodule "3rdparty/opencv-4.3.0"]
-	path = 3rdparty/opencv-4.3.0
+[submodule "3rdparty/opencv_4.3.0"]
+	path = 3rdparty/opencv_4.3.0
 	url = git@github.com:huapohen/opencv_4.3.0.git
 
-[submodule "3rdparty/opencv-3.4"]
-        path = 3rdparty/opencv-3.4
+[submodule "3rdparty/opencv_3.4"]
+        path = 3rdparty/opencv_3.4
 	url = git@github.com:huapohen/opencv_3.4.git
 
 [submodule "3rdparty/ncnn"]
