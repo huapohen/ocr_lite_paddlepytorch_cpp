@@ -19,6 +19,9 @@ git@github.com:huapohen/opencv_3.4.git
 git@github.com:huapohen/opencv_4.3.0.git  
 
 
-编译后  
-执行：cd build && ./build/ocr  
+1> build
+2> run this:  cd build && ./build/ocr  
 
+ocr/inference_impl.cc的std::vector<std::string> InferenceImpl::GetResult() 这个函数里，把筛选条件去掉（目前是只出字母和数字），就是所有的字符了  
+
+字符文件路径： ocr/data/keys.txt  5532个
