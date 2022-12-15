@@ -29,3 +29,7 @@ ocr/inference_impl.cc的std::vector<std::string> InferenceImpl::GetResult() 这�
 
 这是鱼眼图像的输入，还要切换模式为正常图像输入，后续再改  
 This is the input of the fisheye image, and the mode needs to be switched to normal image input, which will be changed later
+
+
+有问题留言，主要是跑通后，就跑去做神经网络端到端AVM了。  
+（If you have any questions, leave a Issues, mainly after running through, then go to do neural network end-to-end AVM.）
