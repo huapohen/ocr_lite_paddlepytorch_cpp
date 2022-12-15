@@ -32,4 +32,9 @@ This is the input of the fisheye image, and the mode needs to be switched to nor
 
 
 有问题留言，主要是跑通后，就跑去做神经网络端到端AVM了。  
-（If you have any questions, leave a Issues, mainly after running through, then go to do neural network end-to-end AVM.）
+（If you have any questions, leave a Issues, mainly after running through, then go to do neural network end-to-end AVM.）  
+
+上传之前，代码的3方库抽出去了，可能有些没改对，编译或跑不起来，先看看能不能自行解决吧，留个issue我不一定能及时看到  
+(Before uploading, the 3-party library of the code was pulled out. Some of them may not be corrected, and they cannot be compiled or run. Let’s see if we can solve it by ourselves. I may not be able to see it in time if you leave an issue.)
+
+
