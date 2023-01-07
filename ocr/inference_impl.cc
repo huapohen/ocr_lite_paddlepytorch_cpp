@@ -208,31 +208,36 @@ std::vector<std::string> InferenceImpl::GetResult() {
   std::vector<std::string> result, str_tmp;
   for (auto& predict : ocr_results) {
     int text_length = predict.text.size();
-    // A01/001, A001/0001
-    if (text_length > 2 && text_length < 5) {
-      // filter
-      char ch = predict.text[0];
-      if ((ch - 'A' >= 0 && ch - 'Z' <= 0) ||
-          (ch - 'a' >= 0 && ch - 'z' <= 0) ||
-          (ch - '0' >= 0 && ch - '9' <= 0)) {
-        bool valid = true;
-        for (int i = 1; i < text_length; i++) {
-          char c = predict.text[i];
-          if (!(c - '0' >= 0 && c - '9' <= 0)) {
-            valid = false;
-            break;
+    // if (false) {
+    if (true) { // only output 0~9 and a~z(A~Z)
+      // A01/001, A001/0001
+      if (text_length > 2 && text_length < 5) {
+        // filter
+        char ch = predict.text[0];
+        if ((ch - 'A' >= 0 && ch - 'Z' <= 0) ||
+            (ch - 'a' >= 0 && ch - 'z' <= 0) ||
+            (ch - '0' >= 0 && ch - '9' <= 0)) {
+          bool valid = true;
+          for (int i = 1; i < text_length; i++) {
+            char c = predict.text[i];
+            if (!(c - '0' >= 0 && c - '9' <= 0)) {
+              valid = false;
+              break;
+            }
+          }
+          if (valid) {
+            str_tmp.push_back(predict.text);
           }
         }
-        if (valid) {
-          str_tmp.push_back(predict.text);
-        }
       }
+    } else { // output all 5532 characters
+      str_tmp.push_back(predict.text);
     }
   }
   if ((int)str_tmp.size() > 0) {
-    if (m_take_first_string) {
+    if (m_take_first_string) { // only output first string
       result.push_back(str_tmp[0]);
-    } else {
+    } else { // output all ocr results
       result.assign(str_tmp.begin(), str_tmp.end());
     }
   }
