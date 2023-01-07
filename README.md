@@ -38,3 +38,16 @@ This is the input of the fisheye image, and the mode needs to be switched to nor
 (Before uploading, the 3-party library of the code was pulled out. Some of them may not be corrected, and they cannot be compiled or run. Let’s see if we can solve it by ourselves. I may not be able to see it in time if you leave an issue.)
 
 
+目前只输出 数字和字母，如果想输出所有5532个字符，改代码中条件，即可 ocr/inference_impl.cc---->GetResult()--->211-212行  
+in  ocr/inference_impl.cc----> std::vector<std::string> InferenceImpl::GetResult() ----> filter out digit 0~9 and a~z(A~Z)    
+if you want output all 5532 characters, you can change the judgment condition 211-212 lines:  "if (true) { // only output 0~9 and a~z(A~Z)  ---->  if (false) {"   
+
+目前只输出 ocr的一个结果，改ocr/inference_impl.cc---->GetResult()--->238行，最直接   
+the num of ocr output results can be change in ocr/inference_impl.cc---->GetResult()---> 238 line, change the judgment condition  
+
+
+输入图像目前可以是任意图，把 ocr/data/ocr_config.json里的non_bev_test_mode，置为true 即可。因为图输入后，支持去畸变，不走去畸变的通道即可，就是任意图输入，直接做检测识别。  
+目前把图进行了一些前处理，可在代码中去掉  
+(The input image can be any image at present, just set non_bev_test_mode in ocr/data/ocr_config.json to 'true'.)   
+(At present, some pre-processing has been performed on the graph, which can be removed in the code)  
+
